@@ -1,0 +1,558 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fcff;
+  color: #1d1d1d;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 12px 5%;
+  background: #ffffff;
+  display: flex;
+  z-index: 5;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.logo h2 {
+  font-size: 22px;
+  color: #009688;
+  font-weight: 600;
+}
+
+.logo h2 span {
+  color: #0072ff;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu ul li {
+  margin-left: 25px;
+}
+
+.menu ul a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.menu ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #009688;
+  transition: width 0.3s ease;
+}
+
+.menu ul a:hover {
+  color: #009688;
+}
+
+.menu ul a:hover::after {
+  width: 100%;
+}
+
+nav .menu button {
+  background-color: blue;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 18px auto;
+  cursor: pointer;
+}
+
+.sidemenu {
+  width: 30%;
+  background-color: #e5e5e5;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  right: -500px;
+  height: 100%;
+  padding: 50px 30px;
+  transition: all 0.5s ease;
+}
+
+.sidemenu.open {
+  right: 0;
+}
+
+.sidemenu .close {
+  width: 25px;
+  height: 25px;
+  background-color: #b81212;
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.sidemenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidemenu ul a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 5px;
+  color: #000;
+  border-bottom: 1px solid #bfbfbf;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.sidemenu ul li:last-child a {
+  border-bottom: 0;
+}
+
+.sidemenu ul a:hover {
+  background-color: #009688;
+}
+
+header {
+  margin-top: 140px;
+  text-align: center;
+  padding: 50px 5%;
+}
+
+header h1 {
+  font-size: 48px;
+  color: #009688;
+  font-weight: 600;
+}
+
+header h1 span {
+  color: #0072ff;
+}
+
+header p {
+  margin-top: 15px;
+  color: #555;
+  font-size: 18px;
+}
+
+.services {
+  padding: 70px 5%;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.services h2 {
+  font-size: 36px;
+  color: #0072ff;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.service-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service-box {
+  background: #f3faff;
+  border: 1px solid #e0f2f1;
+  border-radius: 10px;
+  width: 260px;
+  margin: 15px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 10px rgba(0, 114, 255, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 150, 136, 0.2);
+}
+
+.service-box img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.service-box h3 {
+  color: #009688;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service-box p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.dashboard {
+  margin: 120px auto 40px;
+  padding: 0 5%;
+  font-family: "Roboto", sans-serif;
+}
+
+.dashboard h2 {
+  font-size: 32px;
+  color: #0b1f33;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  background-color: #f0f4f8;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card h3 {
+  font-size: 18px;
+  color: #0b1f33;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0b1f33;
+}
+
+.card.total {
+  background-color: #d1e8ff;
+}
+
+.card.in-stock {
+  background-color: #d4f4dd;
+}
+
+.card.out-stock {
+  background-color: #ffe5e5;
+}
+
+.card.expired {
+  background-color: #ffd1d1;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  background-color: #f3faff;
+  padding: 60px 5% 30px;
+  color: #1d1d1d;
+  border-top: 2px solid #0072ff;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-box {
+  flex: 1 1 250px;
+}
+
+.footer-box h3 {
+  font-size: 20px;
+  color: #0072ff;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-box p,
+.footer-box ul li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 10px;
+}
+
+.footer-box ul li a {
+  color: #009688;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #0072ff;
+}
+
+@media (max-width: 768px) {
+}
+
+.inventory-section {
+  margin: 120px auto 40px;
+  padding: 0 5%;
+}
+
+.inventory-section h2 {
+  font-size: 40px;
+  color: #0072ff;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.med-inv {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.med-inv thead th {
+  background-color: #0044cc;
+  color: #fff;
+  padding: 14px 12px;
+  font-size: 0.95rem;
+  border-bottom: 3px solid #0072ff;
+  text-align: left;
+}
+
+.med-inv tbody tr.odd td {
+  background-color: #e0f7fa;
+  color: #0b1f33;
+}
+
+.med-inv tbody tr.even td {
+  background-color: #ffffff;
+  color: #0b1f33;
+}
+
+.med-inv tbody td {
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+.inStock {
+  background-color: #e6f7ee !important;
+  color: #16a100 !important;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.outStock {
+  background-color: #ffecec !important;
+  color: #b42318 !important;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.expiry-section {
+  margin: 120px auto 40px;
+  padding: 0 5%;
+  font-family: "Roboto", sans-serif;
+}
+
+.expiry-section h2 {
+  font-size: 32px;
+  color: #0b1f33;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.expiry-alert {
+  background-color: #ffe5e5;
+  color: #b42318;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-left: 6px solid #b42318;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.expiry-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.expiry-table th,
+.expiry-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.expiry-table th {
+  background-color: #0b1f33;
+  color: #fff;
+  font-weight: 600;
+}
+
+.expiry-table tbody tr {
+  background-color: #f9f9f9;
+}
+
+.expiry-table tbody tr:nth-child(even) {
+  background-color: #e6f2ff;
+}
+
+.expiry-table tbody td:last-child {
+  font-weight: bold;
+  color: #b42318;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .inventory-section {
+    padding: 0 2%;
+    margin-top: 140px;
+  }
+
+  .med-inv thead {
+    display: none;
+  }
+
+  .med-inv tbody td {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .med-inv tbody td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    color: #0072ff;
+  }
+
+  .med-inv tbody tr {
+    margin-bottom: 15px;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9fcff;
+  }
+
+  .expiry-table,
+  .expiry-table thead,
+  .expiry-table tbody,
+  .expiry-table th,
+  .expiry-table td,
+  .expiry-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .expiry-table thead {
+    display: none;
+  }
+
+  .expiry-table tbody tr {
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .expiry-table tbody td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .expiry-table tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    text-align: left;
+    font-weight: 600;
+    color: #0b1f33;
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
